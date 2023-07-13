@@ -1,0 +1,50 @@
+{
+    "build": {
+        "target": ".",
+        "tasks": [
+            {
+                "for": "hana",
+                "src": "db",
+                "options": {
+                    "model": [
+                        "db",
+                        "srv"
+                    ]
+                }
+            },
+            {
+                "for": "nodejs",
+                "src": "srv",
+                "dest": "gen",
+                "options": {
+                    "model": [
+                        "db",
+                        "srv"
+                    ]
+                }
+            }
+        ]
+    },
+    "auth": {
+        "passport": {
+            "strategy": "mock",
+            "users": {
+                "hciftci": {
+                    "password": "123",
+                    "ID": "hciftci",
+                    "roles": [
+                        "Teacher",
+                        "SchoolManager"
+                    ]
+                },
+                "tceyhan": {
+                    "password": "123",
+                    "ID": "tceyhan",
+                    "roles": [
+                        "Teacher"
+                    ]
+                }
+            }
+        }
+    }
+}
